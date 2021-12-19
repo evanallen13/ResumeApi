@@ -9,7 +9,7 @@ namespace ResumeApi.src
             var certifications = new List<modCertification>();
 
             modCertification cert = new modCertification();
-            cert.name = "Az-204";
+            cert.title = "Az-204 Azure Developer Associate";
 
             certifications.Add(cert);
 

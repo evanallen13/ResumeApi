@@ -18,6 +18,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Default 
+app.MapGet("/certifications", () => "Hello World");
+
 // Certifications 
 var certification = new Certification();
 app.MapGet("/certifications", () => certification.GetCerts());
