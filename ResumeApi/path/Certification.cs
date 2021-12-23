@@ -9,7 +9,10 @@ namespace ResumeApi.src
             var certifications = new List<modCertification>();
 
             modCertification cert = new modCertification();
-            cert.title = "Az-204 Azure Developer Associate";
+            cert.title = "Azure Developer Associate";
+            cert.name = "Az-204";
+            cert.imgageUrl = "url";
+            cert.credentialUrl = "8439";
 
             certifications.Add(cert);
 
@@ -23,6 +26,14 @@ namespace ResumeApi.src
             modCertification cert = new modCertification();
 
             return cert;
+        }
+
+        public string SayHello()
+        {
+            string myString = Environment.GetEnvironmentVariable("hello") ?? "This is wrong";
+
+
+            return myString;
         }
     }
 }

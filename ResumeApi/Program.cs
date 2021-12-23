@@ -26,6 +26,6 @@ var certification = new Certification();
 app.MapGet("/certifications", () => certification.GetCerts());
 app.MapGet("/certifications/{id}", (int id) => certification.GetCert(id));
 
-
+app.MapGet("/sayHello", () => certification.SayHello());
 
 app.Run();
