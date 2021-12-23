@@ -1,3 +1,4 @@
+using ResumeApi.path;
 using ResumeApi.src;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,9 +24,26 @@ app.MapGet("/", () => "Hello World");
 
 // Certifications 
 var certification = new Certification();
-app.MapGet("/certifications", () => certification.GetCerts());
-app.MapGet("/certifications/{id}", (int id) => certification.GetCert(id));
+app.MapGet("/certification", () => certification.GetCerts());
+app.MapGet("/certification/{id}", (int id) => certification.GetCert(id));
 
-app.MapGet("/sayHello", () => certification.SayHello());
+
+// Jobs 
+var job = new Job();
+app.MapGet("/job", () => job.GetJobs());
+app.MapGet("/job/{id}", (Guid id) => job.GetJobs(id));
+
+// Skills 
+
+// Projects
+var project = new Project();
+app.MapGet("/project", () => project.GetProject());
+app.MapGet("/project/{id}", (Guid id) => project.GetProject(id));
+
+// Education
+var education = new Education();
+app.MapGet("/education", () => education.GetEducation());
+app.MapGet("/education/{id}", (Guid id) => education.GetEducation(id));
+
 
 app.Run();
