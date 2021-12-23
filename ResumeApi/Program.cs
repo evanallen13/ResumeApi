@@ -11,11 +11,14 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
@@ -26,7 +29,6 @@ app.MapGet("/", () => "Hello World");
 var certification = new Certification();
 app.MapGet("/certification", () => certification.GetCerts());
 app.MapGet("/certification/{id}", (int id) => certification.GetCert(id));
-
 
 // Jobs 
 var job = new Job();
@@ -44,6 +46,5 @@ app.MapGet("/project/{id}", (Guid id) => project.GetProject(id));
 var education = new Education();
 app.MapGet("/education", () => education.GetEducation());
 app.MapGet("/education/{id}", (Guid id) => education.GetEducation(id));
-
 
 app.Run();
